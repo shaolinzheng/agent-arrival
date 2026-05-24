@@ -1,0 +1,23 @@
+[project]
+name = "agent-arrival"
+version = "0.1.0"
+description = "Terminal speech-to-speech demo for the OpenAI Realtime API."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0.0",
+    "openai[realtime]>=2.0.0",
+    "python-dotenv>=1.0.1",
+    "rich>=13.7.1",
+    "sounddevice>=0.5.0",
+]
+
+[project.scripts]
+realtime-voice-demo = "realtime_voice_demo:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["realtime_voice_demo"]
