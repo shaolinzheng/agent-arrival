@@ -2,6 +2,9 @@
 
 Terminal speech-to-speech demo using the OpenAI Python SDK, the Realtime API, and `gpt-realtime-2`.
 
+The demo runs as a terminal UI with the Ghostty ASCII animation on the left and
+conversation text on the right.
+
 ## Requirements
 
 - macOS, Linux, or another local machine with a microphone and speaker.
@@ -43,3 +46,15 @@ The demo reads these optional environment variables:
 - `REALTIME_REASONING_EFFORT`: defaults to `low`.
 - `REALTIME_NOISE_REDUCTION`: `near_field`, `far_field`, or `off`; defaults to `near_field`.
 - `REALTIME_INSTRUCTIONS`: custom behavior instructions for the assistant.
+- `REALTIME_HALF_DUPLEX`: `true` or `false`; defaults to `false`. When enabled,
+  microphone audio is not sent while the assistant is responding, which helps
+  prevent speaker audio from triggering another turn.
+- `GHOSTTY_FRAME_INTERVAL_SECONDS`: animation frame interval; defaults to
+  `0.03333333333333333` for roughly 30 FPS.
+
+## Third-party assets
+
+The ASCII animation frames in `assets/ghostty` are from the Ghostty website
+repository and are licensed under the MIT License:
+
+https://github.com/ghostty-org/website/tree/main/terminals/home/animation_frames
